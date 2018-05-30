@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML,CSS,JavaScript">
+<meta content="telephone=no" name="format-detection">
+<title>友意健康</title>
+<link href="css/Cbase.css" type="text/css" rel="stylesheet">
+<link href="css/index.css" type="text/css" rel="stylesheet">
+<link href="css/swiper.min.css" type="text/css" rel="stylesheet">
+<script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
+<script src="js/base.js" type="text/javascript"></script>
+<script src="js/swiper.min.js" type="text/javascript"></script>
+<script src="js/index.js" type="text/javascript"></script>
+</head>
+
+<body>
+<!--ftop开始-->
+<div class="ftop">
+  <div class="index_search index_search01">
+    <a class="back" onClick="javascript:history.back(-1);"><img src="images/icon_03.png"></a>
+    <div>
+    <input type="text" placeholder="请输入您要搜索的产品">
+    <input class="dw" onclick="document.location='search_list.html'" type="button" value=" "></div>
+  </div>
+  <div style="clear: both;"></div>
+</div>
+<!--ftop开始--> 
+<div class="search_list">
+  <p><a class="on"><span>综合</span></a><a><span>销量</span></a><a><span>评价</span></a><a><span class="bg">价格</span></a></p>
+  <ul>
+     <li><a href="product_xq.html"><img src="images/img_010.jpg">
+         <div class="search_item">
+            <p>云南特级冬虫夏草云南特级冬虫夏草</p>
+            <h2><i>￥</i><b>185.00</b><span>月销18252笔</span></h2>
+         </div>
+     </a></li>
+     <li><a href="product_xq.html"><img src="images/img_03.jpg">
+         <div class="search_item">
+            <p>云南特级冬虫夏草</p>
+            <h2><i>￥</i><b>185.00</b><span>月销18252笔</span></h2>
+         </div>
+     </a></li>
+     <li><a href="product_xq.html"><img src="images/img_010.jpg">
+         <div class="search_item">
+            <p>云南特级冬虫夏草</p>
+            <h2><i>￥</i><b>185.00</b><span>月销18252笔</span></h2>
+         </div>
+     </a></li>
+     <li><a href="product_xq.html"><img src="images/img_010.jpg">
+         <div class="search_item">
+            <p>云南特级冬虫夏草</p>
+            <h2><i>￥</i><b>185.00</b><span>月销18252笔</span></h2>
+         </div>
+     </a></li>
+      <li><a href="product_xq.html"><img src="images/img_010.jpg">
+          <div class="search_item">
+              <p>云南特级冬虫夏草</p>
+              <h2><i>￥</i><b>185.00</b><span>月销18252笔</span></h2>
+          </div>
+      </a></li>
+      <li><a href="product_xq.html"><img src="images/img_010.jpg">
+          <div class="search_item">
+              <p>云南特级冬虫夏草</p>
+              <h2><i>￥</i><b>185.00</b><span>月销18252笔</span></h2>
+          </div>
+      </a></li>
+  </ul>
+</div>
+
+<script>
+    $(".search_list ul li a img").each(function(){
+        var w = $(this).width();
+        $(this).height(w+"px");
+    })
+
+</script>
+
+
+</body>
+</html>

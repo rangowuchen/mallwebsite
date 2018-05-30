@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="description" content="Free Web tutorials">
+    <meta name="keywords" content="HTML,CSS,JavaScript">
+    <meta content="telephone=no" name="format-detection">
+    <title>友意健康</title>
+    <link href="css/Cbase.css" type="text/css" rel="stylesheet">
+    <link href="css/center.css" type="text/css" rel="stylesheet">
+    <script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="js/base.js" type="text/javascript"></script>
+</head>
+<body>
+
+<!--ftop开始-->
+<div class="ftop">
+    <a class="back" onClick="javascript:history.back(-1);"><img src="images/icon_03.png"></a>
+    <h2>个人资料</h2>
+    <a class="comea">&nbsp;</a>
+    <div style="clear: both;"></div>
+</div>
+<!--ftop开始-->
+
+
+<!--个人中心-->
+<div class="setziliao">
+    <ul>
+        <li><span>个人名称</span><label><input type="text" value="Angelababy杨颖"></label></li>
+        <li><span>头像</span><label class="bg" id="localImag"><input type="file" id="doc" onchange="javascript:setImagePreview();"><img id="preview" src="images/centericon_06.png" alt=""></label></li>
+        <li><span>微信号</span><label><input type="text" value="我是Angelababy" readonly></label></li>
+        <li><span>手机号</span><label onclick="window.location='center-set-phone.html'"><input type="text" value="158****2136" readonly></label></li>
+    </ul>
+    <a href="center-set.html" class="makesure">保存</a>
+</div>
+<!--个人中心-->
+
+
+<script>
+    //下面用于图片上传预览功能
+    function setImagePreview(avalue) {
+        var docObj=document.getElementById("doc");
+
+        var imgObjPreview=document.getElementById("preview");
+        if(docObj.files &&docObj.files[0])
+        {
+//火狐下，直接设img属性
+            imgObjPreview.style.display = 'block';
+            imgObjPreview.style.width = '40px';
+            imgObjPreview.style.height = '40px';
+//imgObjPreview.src = docObj.files[0].getAsDataURL();
+
+//火狐7以上版本不能用上面的getAsDataURL()方式获取，需要一下方式
+            imgObjPreview.src = window.URL.createObjectURL(docObj.files[0]);
+        }
+        else
+        {
+//IE下，使用滤镜
+            docObj.select();
+            var imgSrc = document.selection.createRange().text;
+            var localImagId = document.getElementById("localImag");
+//必须设置初始大小
+            localImagId.style.width = "40px";
+            localImagId.style.height = "40px";
+//图片异常的捕捉，防止用户修改后缀来伪造图片
+            try{
+                localImagId.style.filter="progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
+                localImagId.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = imgSrc;
+            }
+            catch(e)
+            {
+                alert("您上传的图片格式不正确，请重新选择!");
+                return false;
+            }
+            imgObjPreview.style.display = 'none';
+            document.selection.empty();
+        }
+        return true;
+    }
+</script>
+
+
+
+</body>
+</html>
